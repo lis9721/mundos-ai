@@ -1,0 +1,72 @@
+================================================================================
+EVIDENCIA 5: AUDITORÍA DE PUBLICACIÓN CON NPM PUBLISH --DRY-RUN
+================================================================================
+
+1. SIMULACIÓN DE PUBLICACIÓN CON .GITIGNORE ACTIVO:
+Comando ejecutado:
+npm publish --dry-run
+
+Salida en consola:
+--------------------------------------------------------------------------------
+npm warn gitignore-fallback No .npmignore file found, using .gitignore for file exclusion. Consider creating a .npmignore file to explicitly control published files.
+npm notice 
+npm notice package: mundos-ia@1.0.0
+npm notice Tarball Contents 
+npm notice 200B .env.example
+npm notice 2.6kB PROMPT.md
+npm notice 4.1kB README.md
+npm notice 306.0kB evidencias/mundo_a97b6924.jpg
+npm notice 155.9kB evidencias/mundo_cba86145.jpg
+npm notice 820B evidencias/README.md
+npm notice 489B package.json
+npm notice 3.5kB src/imagen.js
+npm notice 3.4kB src/index.js
+npm notice 2.1kB src/mundo.js
+npm notice 2.0kB src/texto.js
+npm notice Tarball Details 
+npm notice name: mundos-ia                                
+npm notice version: 1.0.0                                 
+npm notice filename: mundos-ia-1.0.0.tgz                  
+npm notice total files: 11
+--------------------------------------------------------------------------------
+Resultado: Ni .env, ni data/, ni descripciones/, ni imagenes/ son incluidos.
+
+
+2. EXPERIMENTO: SIMULACIÓN DE PUBLICACIÓN SIN .GITIGNORE (RENOMBRADO A .GITIGNORE.OFF):
+Comando ejecutado:
+npm publish --dry-run
+
+Salida en consola:
+--------------------------------------------------------------------------------
+npm notice 
+npm notice package: mundos-ia@1.0.0
+npm notice Tarball Contents 
+npm notice 326B .env
+npm notice 200B .env.example
+npm notice 50B .gitignore.off
+npm notice 2.6kB PROMPT.md
+npm notice 4.1kB README.md
+npm notice 338B data/mundo_a97b6924.json
+npm notice 297B data/mundo_cba86145.json
+npm notice 705B descripciones/mundo_a97b6924.txt
+npm notice 656B descripciones/mundo_cba86145.txt
+npm notice 306.0kB evidencias/mundo_a97b6924.jpg
+npm notice 155.9kB evidencias/mundo_cba86145.jpg
+npm notice 820B evidencias/README.md
+npm notice 306.0kB imagenes/mundo_a97b6924.jpg
+npm notice 155.9kB imagenes/mundo_cba86145.jpg
+npm notice 489B package.json
+npm notice 3.5kB src/imagen.js
+npm notice 3.4kB src/index.js
+npm notice 2.1kB src/mundo.js
+npm notice 2.0kB src/texto.js
+npm notice Tarball Details 
+npm notice name: mundos-ia                                
+npm notice version: 1.0.0                                 
+npm notice filename: mundos-ia-1.0.0.tgz                  
+npm notice total files: 19
+--------------------------------------------------------------------------------
+Resultado del experimento:
+Sin .gitignore, npm incluye automáticamente el archivo .env (326B) con las API keys reales,
+así como los datos JSON, descripciones e imágenes generadas. Esto expondría credenciales privadas
+a cualquier usuario del registro npm público. Tras la prueba, .gitignore fue restaurado de inmediato.

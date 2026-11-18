@@ -1,0 +1,31 @@
+================================================================================
+EVIDENCIA 6: VERIFICACIÓN DE SEGURIDAD CON GIT LS-FILES
+================================================================================
+Comando ejecutado:
+git ls-files
+
+Salida en consola:
+--------------------------------------------------------------------------------
+.env.example
+.gitignore
+PROMPT.md
+README.md
+evidencias/01-mundo-uno.log
+evidencias/02-mundo-dos.log
+evidencias/03-reutilizacion-cache.log
+evidencias/04-errores-provocados.log
+evidencias/05-npm-publish-dry-run.log
+evidencias/06-git-ls-files.log
+evidencias/README.md
+evidencias/mundo_a97b6924.jpg
+evidencias/mundo_cba86145.jpg
+package-lock.json
+package.json
+src/imagen.js
+src/index.js
+src/mundo.js
+src/texto.js
+--------------------------------------------------------------------------------
+Conclusión:
+El archivo sensible .env NO está registrado ni versionado en Git.
+Las carpetas data/, descripciones/ e imagenes/ también están debidamente excluidas.

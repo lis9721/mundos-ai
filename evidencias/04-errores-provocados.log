@@ -1,0 +1,57 @@
+================================================================================
+EVIDENCIA 4: TRES ERRORES PROVOCADOS Y MENSAJES EXPLICATIVOS EN ESPAÑOL
+================================================================================
+
+--------------------------------------------------------------------------------
+PRUEBA DE ERROR 1: CLAVE DE API INVÁLIDA O SIN PERMISOS (ESTADO 401 / 403)
+--------------------------------------------------------------------------------
+Modificación temporal: se cambió TEXTO_API_KEY en .env por un valor inexistente.
+Comando ejecutado:
+npm start -- "Prueba de error de clave" "Mundo de prueba de clave" rojo azul verde dorado violeta
+
+Salida en consola:
+> mundos-ia@1.0.0 start
+> node src/index.js Prueba de error de clave Mundo de prueba de clave rojo azul verde dorado violeta
+
+Paso 1: mundo guardado en data/mundo_cebfd1e9.json
+Error: La API key no es válida. Revisa tu archivo .env.
+
+Código de salida: 1
+Observación: El paso 1 completó el guardado del JSON (conservando resultados parciales),
+y el error fue explicado en español sin mostrar trazas de error técnicas ni exponer la clave.
+
+--------------------------------------------------------------------------------
+PRUEBA DE ERROR 2: RUTA O MODELO INEXISTENTE (ESTADO 404 / 410)
+--------------------------------------------------------------------------------
+Modificación temporal: se cambió TEXTO_URL en .env por una ruta inexistente en el servidor.
+Comando ejecutado:
+npm start -- "Prueba de error de ruta inexistente" "Mundo de prueba 404" rojo azul verde dorado violeta
+
+Salida en consola:
+> mundos-ia@1.0.0 start
+> node src/index.js Prueba de error de ruta inexistente Mundo de prueba 404 rojo azul verde dorado violeta
+
+Paso 1: mundo guardado en data/mundo_e71a1a89.json
+Error: El modelo o la URL no existen. Revisa tu configuración.
+
+Código de salida: 1
+Observación: Captura adecuada de respuesta HTTP 404 informando claramente que el modelo
+o endpoint no existen.
+
+--------------------------------------------------------------------------------
+PRUEBA DE ERROR 3: SIN CONEXIÓN O URL MAL ESCRITA (TYPEERROR: FETCH FAILED)
+--------------------------------------------------------------------------------
+Modificación temporal: se configuró un dominio inalcanzable (https://servidor-inexistente-12345.com/api).
+Comando ejecutado:
+npm start -- "Prueba de error de conexion" "Mundo sin internet" rojo azul verde dorado violeta
+
+Salida en consola:
+> mundos-ia@1.0.0 start
+> node src/index.js Prueba de error de conexion Mundo sin internet rojo azul verde dorado violeta
+
+Paso 1: mundo guardado en data/mundo_5c7623ac.json
+Error: No se pudo conectar. Revisa tu internet o la URL.
+
+Código de salida: 1
+Observación: El error nativo TypeError emitido por Node fetch al fallar la resolución DNS
+es interceptado y transformado en una explicación amigable para el usuario.

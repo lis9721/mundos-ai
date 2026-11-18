@@ -1,0 +1,22 @@
+{
+  "name": "mundos-ia",
+  "version": "1.0.0",
+  "description": "Programa de consola que guarda un mundo imaginario en JSON, genera su descripción con IA de texto y su imagen con IA de imágenes",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "keywords": [
+    "ia",
+    "node",
+    "fetch",
+    "imagenes",
+    "sena",
+    "adso"
+  ],
+  "author": "Luisa Fernanda Arias Puerta",
+  "license": "ISC",
+  "dependencies": {
+    "object-hash": "^3.0.0"
+  }
+}

@@ -1,0 +1,43 @@
+================================================================================
+EVIDENCIA 2: EJECUCIÓN COMPLETA DEL SEGUNDO MUNDO
+================================================================================
+Fecha de ejecución: 2026-11-16
+Comando ejecutado:
+npm start -- "Una erupción de magma cristalino despierta a los guardianes mecánicos" "Obsidiana, un reino subterráneo de cavernas de basalto y ríos de lava fría" negro naranja turquesa cobrizo blanco
+
+Salida en consola:
+--------------------------------------------------------------------------------
+> mundos-ia@1.0.0 start
+> node src/index.js Una erupción de magma cristalino despierta a los guardianes mecánicos Obsidiana, un reino subterráneo de cavernas de basalto y ríos de lava fría negro naranja turquesa cobrizo blanco
+
+Paso 1: mundo guardado en data/mundo_a97b6924.json
+Paso 2: descripción guardada en descripciones/mundo_a97b6924.txt
+Paso 3: imagen guardada en imagenes/mundo_a97b6924.jpg
+Listo. Revisa la carpeta imagenes/
+--------------------------------------------------------------------------------
+Código de salida: 0 (Éxito)
+
+ARCHIVOS GENERADOS:
+
+1. data/mundo_a97b6924.json:
+{
+  "id": "a97b6924",
+  "situacion": "Una erupción de magma cristalino despierta a los guardianes mecánicos",
+  "mundo": "Obsidiana, un reino subterráneo de cavernas de basalto y ríos de lava fría",
+  "colores": [
+    "negro",
+    "naranja",
+    "turquesa",
+    "cobrizo",
+    "blanco"
+  ],
+  "creadoEn": "2026-11-17T01:08:06.436Z"
+}
+
+2. descripciones/mundo_a97b6924.txt:
+In the obsidian cavern, black basalt walls glint with a faint silver sheen, while a sudden eruption of crystalline magma spews bright orange shards that glitter like shattered suns. The molten glass pours into rivers of cold, turquoise lava that snake across the cavern floor, casting eerie, prism‑colored reflections. Emerging from the glowing fissures, towering mechanical guardians with coppery plating and polished steel limbs rise, their eyes flickering white light against the dark, swirling backdrop. The scene is bathed in a dramatic chiaroscuro, with intense orange glow contrasting the deep black shadows, creating a surreal, high‑contrast composition that feels both ancient and futuristic.
+
+3. imagenes/mundo_a97b6924.jpg:
+Tamaño: 305,980 bytes
+Formato: JPEG válido (cabecera ffd8ffe0)
+Copia guardada en: evidencias/mundo_a97b6924.jpg

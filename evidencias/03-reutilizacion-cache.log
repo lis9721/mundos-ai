@@ -1,0 +1,36 @@
+================================================================================
+EVIDENCIA 3: REUTILIZACIÓN DE ARCHIVOS Y AHORRO DE CUOTA (SEGUNDA EJECUCIÓN)
+================================================================================
+Al repetir exactamente el mismo comando de un mundo previamente generado, el
+programa verifica la existencia de descripciones/mundo_<id>.txt e imagenes/mundo_<id>.jpg.
+Al encontrarlos con fs.existsSync, omite las peticiones HTTP a las APIs de texto e imágenes.
+
+Comando ejecutado (Mundo 1):
+npm start -- "Una tormenta eléctrica amenaza la ciudad flotante" "Aerópolis, un archipiélago de islas que flotan sobre las nubes" rojo azul verde dorado violeta
+
+Salida en consola:
+--------------------------------------------------------------------------------
+> mundos-ia@1.0.0 start
+> node src/index.js Una tormenta eléctrica amenaza la ciudad flotante Aerópolis, un archipiélago de islas que flotan sobre las nubes rojo azul verde dorado violeta
+
+Paso 1: mundo guardado en data/mundo_cba86145.json
+Paso 2: la descripción ya existía, no se llamó al modelo de texto.
+Paso 3: la imagen ya existía, no se llamó al modelo de imágenes.
+Listo. Revisa la carpeta imagenes/
+--------------------------------------------------------------------------------
+Tiempo de ejecución: < 1 segundo (ejecución totalmente local, cuota intacta).
+
+Comando ejecutado (Mundo 2):
+npm start -- "Una erupción de magma cristalino despierta a los guardianes mecánicos" "Obsidiana, un reino subterráneo de cavernas de basalto y ríos de lava fría" negro naranja turquesa cobrizo blanco
+
+Salida en consola:
+--------------------------------------------------------------------------------
+> mundos-ia@1.0.0 start
+> node src/index.js Una erupción de magma cristalino despierta a los guardianes mecánicos Obsidiana, un reino subterráneo de cavernas de basalto y ríos de lava fría negro naranja turquesa cobrizo blanco
+
+Paso 1: mundo guardado en data/mundo_a97b6924.json
+Paso 2: la descripción ya existía, no se llamó al modelo de texto.
+Paso 3: la imagen ya existía, no se llamó al modelo de imágenes.
+Listo. Revisa la carpeta imagenes/
+--------------------------------------------------------------------------------
+Código de salida: 0 (Éxito)
